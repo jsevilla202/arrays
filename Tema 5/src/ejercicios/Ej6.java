@@ -10,11 +10,9 @@ public class Ej6 {
 		int impares[] = new int[8];		
 		Scanner sc = new Scanner(System.in);
 		
-		for(int i: numeros) {
-			int numero;
+		for(int i = 0; i<numeros.length; i++) {
 			System.out.print("Inserte un número: ");
-			numero = sc.nextInt();
-			numeros[i]=numero;
+			numeros[i] = sc.nextInt();
 		}
 		for(int i=0; i<numeros.length; i++) {
 			int par=0;
