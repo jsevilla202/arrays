@@ -28,6 +28,7 @@ public class Ej5 {
 		for (int i = ranking.length - 1; i >= 0; i--) {
 			System.out.println(ranking[i]);
 		}
+		sc.close();
 
 	}
 

@@ -20,6 +20,7 @@ public class Ej3 {
 				j++;
 			}
 		}
+		sc.close();
 
 		System.out.println(Arrays.equals(tabla1, tabla2) ? "Sus tablas SON iguales" : "Sus tablas NO SON iguales");
 	}
