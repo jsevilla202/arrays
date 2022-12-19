@@ -8,15 +8,15 @@ public class Ej2 {
 		int tabla[] = new int[55];
 		int posicion = 0;
 		Arrays.fill(tabla, 10);
-		
-		for(int i = 1; i<=9;i++) {
-			for(int j = 1; j<=i; j++) {
-				Arrays.fill(tabla, posicion ,posicion+1, i);
+
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j <= i; j++) {
+				Arrays.fill(tabla, posicion, posicion + 1, i);
 				posicion++;
 			}
 		}
-		for(int i:tabla) {
-		System.out.print(i+" ");
+		for (int i : tabla) {
+			System.out.print(i + " ");
 		}
 
 	}
