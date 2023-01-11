@@ -12,15 +12,15 @@ public class Ej1 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		for(int i = 0; i!=array.length; i++) {
+		for(int i = 0; i<array.length-1; i++) {
 			System.out.print("Inserte un número para almacenar en el array: ");
 			N = sc.nextInt();
 			array[i] = N;
 		}
 		sc.close();
 
+		array2[0] = array[array.length-1];
 		System.arraycopy(array, 0, array2, 1, array.length-1);
-		System.arraycopy(array,  array.length-1, array2, 0,  1);
 		System.out.println(Arrays.toString(array2));
 		
 
