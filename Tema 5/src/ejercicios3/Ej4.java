@@ -30,6 +30,7 @@ public class Ej4 {
 			}
 		}
 		
+		
 		System.out.println(Arrays.toString(tablaEnteros2));
 		
 		
