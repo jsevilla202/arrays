@@ -8,7 +8,7 @@ public class Ej4 {
 	public static void main(String[] args) {
 		int numero;
 		int tablaEnteros[] = new int [10];
-		int tablaEnteros2[] = new int [10];
+		int tablaEnteros2[] = new int [0];
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -23,13 +23,12 @@ public class Ej4 {
 		
 		int j =0;
 		for(int i =0; i<tablaEnteros.length; i++) {
-			int doble = Arrays.binarySearch(tablaEnteros2, 0, i, tablaEnteros[i]);
+			int doble = Arrays.binarySearch(tablaEnteros2, tablaEnteros[i]);
 			if(doble<0) {
-				tablaEnteros2[j] = tablaEnteros[i];
-				j++;
+				tablaEnteros2 = Arrays.copyOf(tablaEnteros2, tablaEnteros2.length+1);
+				tablaEnteros2[tablaEnteros2.length-1] = tablaEnteros[i];			
 			}
 		}
-		
 		
 		System.out.println(Arrays.toString(tablaEnteros2));
 		
