@@ -12,7 +12,7 @@ public class Ej1 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		for(int i = 0; i<array.length-1; i++) {
+		for(int i = 0; i<array.length; i++) {
 			System.out.print("Inserte un número para almacenar en el array: ");
 			N = sc.nextInt();
 			array[i] = N;
