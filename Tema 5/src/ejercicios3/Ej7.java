@@ -18,6 +18,7 @@ public class Ej7 {
 			System.out.println("a. Mostrar valores\nb. Introducir valores\nc. Salir");
 			System.out.println("¿Qué acción desea realizar? ");
 			opcion = sc.next();
+			opcion.toLowerCase();
 			
 			if(opcion.equals("a")) {
 				intopcion = 1;
