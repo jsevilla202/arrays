@@ -7,7 +7,6 @@ public class Ej3 {
 
 	public static void main(String[] args) {
 		int valor;
-		int posicion;
 		String opcion = "";
 		int intopcion = 0;
 		int array[] = new int [10];
@@ -17,6 +16,8 @@ public class Ej3 {
 		for(int i = 0; i<array.length; i++) {
 			array[i] = (int) (Math.random()*101);
 		}
+		
+		Arrays.sort(array);
 		
 		while(intopcion!=3) {
 			System.out.println("a. Mostrar valores\nb. Eliminar valores\nc. Salir");
@@ -36,16 +37,16 @@ public class Ej3 {
 			switch(intopcion) {
 			case 1: System.out.println(Arrays.toString(array)); System.out.println(); break;
 			case 2: 
-				System.out.print("¿Qué valor desea introducir? ");
+				System.out.print("¿Qué valor desea eliminar? ");
 				valor = sc.nextInt();
-				System.out.print("¿En cual posición lo desea introducir? ");
-				posicion = sc.nextInt();
-				if(posicion>=10||posicion<0) {
-					System.out.println("ERROR: Posición fuera del limite de la tabla, inserte un valor de entre 0 a "+(array.length-1));
+				int indice = Arrays.binarySearch(array, valor);
+				if(indice>=0) {
+					System.arraycopy(array, indice+1, array, indice, array.length - indice - 1);
+					array = Arrays.copyOf(array, array.length-1);
+					System.out.println("Valor eliminado");
 				}
-				else{
-					array[posicion] = valor;
-					System.out.println("Valor añadido");
+				else {
+					System.out.println("ERROR: Valor no encontrado");
 				}
 				System.out.println();
 				break;
