@@ -12,10 +12,14 @@ public class Ej5 {
 			int fila = 0;
 			for(int j = 0; j< tabla[0].length-1; j++) {
 				tabla[i][j] = (int) (Math.random()*(1000-100)+100);
+				//Total
 				total = total + tabla[i][j];
+				//filas
 				fila = fila + tabla[i][j];
 			}
+			//Ubicamos el total en la esquina inferior derecha
 			tabla[tabla.length-1][tabla[0].length-1] = total;
+			//Ubicamos el total al final de la fila
 			tabla[i][tabla.length] = fila;
 		}
 		
