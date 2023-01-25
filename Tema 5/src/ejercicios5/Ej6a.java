@@ -24,18 +24,23 @@ public class Ej6a {
 			Arrays.sort(auxiliar[i]);
 		}
 		
+		//Pasamos los numeros mayores y menores a sus respectivas filas
 		for(int i = 0; i<=1; i++) {
 			for(int j = 0, k = 0; j<auxiliar2[0].length;j++, k++) {
+				//Los menores en la primera
 				if(i==0) {
 				auxiliar2[i][j] = auxiliar[k][0];
 				}
 				else {
+					//Los mayores en la segunda
 					auxiliar2[i][j] = auxiliar[k][auxiliar[0].length-1];
 				}
 			}
+			//Se ordena para dejar al más peueño y al más grande en extremos opuestos
 			Arrays.sort(auxiliar2[i]);
 		}
 		
+		//Así sabemos que el menor va a estar en la primera posición [0][0] y el mayor en la segunda fila en el último puesto [1][auxiliar2[0].length-1]
 		System.out.println("El número mayor es "+auxiliar2[1][auxiliar2[0].length-1]);
 		System.out.println("El número menor es "+auxiliar2[0][0]);
 

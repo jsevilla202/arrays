@@ -20,53 +20,40 @@ public class Ej6b {
 		}
 		System.out.println();
 		
+		//Se copia la tabla en otra para modificarla
 		for(int i = 0; i<tabla.length;i++) {
 			System.arraycopy(tabla[i], 0, auxiliar[i], 0, tabla[i].length);
+			//Y se ordena
 			Arrays.sort(auxiliar[i]);
 		}
 		
-		for(int i = 0; i<=1; i++) {
-			for(int j = 0; j<auxiliar.length;j++) {
-				if(i==0) {
-					if(j==0) {
-						mini=j;
-					}
-					else {
-						if(auxiliar[j][0]<auxiliar[j-1][0]) {
-							mini=j;
-						}
-					}
-				}
-				else {
-					if(j==0) {
-						maxi=j;
-					}
-					else {
-						if(auxiliar[j][auxiliar[0].length-1]>auxiliar[j-1][0]) {
-							maxi=j;
-						}
-					}
-				}
+		System.out.println();
+		
+		//Buscamos primero las filas en la ue se ubican ya que se erpite menos veces el bucle
+		for(int i = 0; i<auxiliar.length;i++) {
+			//Como la columna es estatica, se puede jugar más facil con los valores d la fila
+			if(auxiliar[maxi][auxiliar[0].length-1]<auxiliar[i][auxiliar[0].length-1]) {
+				maxi = i;
+			}
+			if(auxiliar[mini][0]>auxiliar[i][0]) {
+				mini = i;
 			}
 		}
 		
-		for(int i = 0; i<=1; i++) {
-			for(int j = 0; j<auxiliar[0].length; j++) {
-				if(i==0) {
-					if(auxiliar[mini][0]==tabla[mini][j]) {
-						minj=j;
-					}
-				}
-				else {
-						if(auxiliar[maxi][auxiliar.length-1]==tabla[maxi][j]) {
-							maxj=j;
-						}
-					}
-				}
+		//Ya que sabemos la fila, buscamos números que sean iguales al encontrado en la auxiliar dentro de la principal
+		for(int j = 0; j <tabla[0].length;j++) {
+			//Si se encuentra ya se sabe la posición de la j
+			if(auxiliar[maxi][auxiliar[0].length-1] == tabla[maxi][j]) {
+				maxj = j;
 			}
+			if(auxiliar[mini][0] == tabla[mini][j]) {
+				minj = j;
+			}
+		}
 		
-		System.out.println("La posición del mayor es " + maxi + " "+maxj);
-		System.out.println("La posición del menor es " + mini + " "+minj);
+		//Se muestra la posición +1 para que sea más facil contarlas
+		System.out.println("La posición del mayor es " + (maxi+1) + " "+(maxj+1));
+		System.out.println("La posición del menor es " + (mini+1) + " "+(minj+1));
 		}
 
 	}
