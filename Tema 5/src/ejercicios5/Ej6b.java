@@ -26,7 +26,7 @@ public class Ej6b {
 		}
 		
 		for(int i = 0; i<=1; i++) {
-			for(int j = 0; j<auxiliar[0].length;j++) {
+			for(int j = 0; j<auxiliar.length;j++) {
 				if(i==0) {
 					if(j==0) {
 						mini=j;
